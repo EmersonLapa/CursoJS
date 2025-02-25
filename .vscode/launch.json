@@ -1,0 +1,16 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Iniciar o Edge em relação a localhost",
+            "url": "file:///C:/Users/emelapa/OneDrive%20-%20UNIVERSO%20ONLINE%20S.A/Documentos/Estudos/CursoJS/aula26/Exercicio%20Aula%2026/index.html?",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
