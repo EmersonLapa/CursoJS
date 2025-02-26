@@ -16,6 +16,7 @@ function IMC (peso = 0, altura = 0){
 function meuEscopo(){
     
     const form = document.querySelector('.form');
+    const resultado = document.querySelector('.resultado');
     
     function recebeEventoForm(evento){
 
@@ -34,7 +35,8 @@ function meuEscopo(){
         const alturaConvertida = parseFloat(altura.value);
         console.log(`Altura convertida: ${alturaConvertida}`);
         const imc = IMC(pesoConvertido, alturaConvertida);
-        console.log(`Seu IMC é: ${imc}`);
+        console.log(`Seu IMC é: ${imc.toFixed(2)}`);
+        resultado.innerHTML += `Seu IMC é: ${imc.toFixed(2)}`
     }
     form.addEventListener('submit', recebeEventoForm);
 }
