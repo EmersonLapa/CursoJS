@@ -13,39 +13,30 @@ function calculaImc(peso = 0, altura = 0) {
 }
 
 function verificaImc(imc = 0) {
-
   if (imc <= 18.5) {
-    //console.log(`Seu IMC é: ${imc} (Abaixo do peso)`);
     const resposta = falaImc(imc, "Abaixo do peso");
     return resposta;
   } else if (imc > 18.5 && imc <= 24.9) {
-    //falaImc(imc, "Peso normal");
     const resposta = falaImc(imc, "Peso normal");
     return resposta;
   } else if (imc >= 25 && imc <= 29.9) {
     const resposta = falaImc(imc, "Sobrepeso");
     return resposta;
-    //falaImc(imc, "Sobrepeso");
   } else if (imc >= 30 && imc <= 34.9) {
     const resposta = falaImc(imc, "Obesidade grau 1");
     return resposta;
-    //falaImc(imc, "Obesidade grau 1");
   } else if (imc >= 35 && imc <= 39.9) {
     const resposta = falaImc(imc, "Obesidade grau 2");
     return resposta;
-    //falaImc(imc, "Obesidade grau 2");
   } else {
     const resposta = falaImc(imc, "Obesidade grau 3");
     return resposta;
-    //falaImc(imc, "Obesidade grau 3");
   }
 }
 
 function falaImc(imc = 0, descricaoPeso = "") {
-  //console.log(`Seu IMC é: ${imc} (${descricaoPeso})`);
   const respostaIMC = `Seu IMC é: ${imc} (${descricaoPeso})`;
   console.log("Resposta da variavel:: " + respostaIMC);
-  //return(`Seu IMC é: ${imc} (${descricaoPeso})`);
   return respostaIMC;
 }
 
@@ -63,16 +54,36 @@ function meuEscopo() {
     const altura = form.querySelector(".altura");
     console.log(`Altura: ${altura.value}`);
 
+    //Acredito que precisa converter os elementos
     const pesoConvertido = parseFloat(peso.value);
     console.log(`Peso convertido: ${pesoConvertido}`);
 
     const alturaConvertida = parseFloat(altura.value);
     console.log(`Altura convertida: ${alturaConvertida}`);
-    const imc = calculaImc(pesoConvertido, alturaConvertida);
-    console.log(`Seu IMC é: ${imc}`);
-    const resultadoImc = verificaImc(imc);
-    resultado.innerHTML += `Seu IMC é: ${resultadoImc}`;
-    resultado.innerHTML += `<p>Seu IMC é: ${imc}</p>`;
+
+    if (Number.isNaN(pesoConvertido)) {
+      
+      const mensagemPeso = `Peso Iválido`;
+      resultado.innerHTML += `${mensagemPeso}`;
+
+    } else if (Number.isNaN(alturaConvertida)) {
+
+      const mensagemAlura = `Altura Inválida`;
+      resultado.innerHTML += `${mensagemAlura}`;
+
+    } else {
+      
+      const pesoConvertido = parseFloat(peso.value);
+      console.log(`Peso convertido: ${pesoConvertido}`);
+
+      const alturaConvertida = parseFloat(altura.value);
+      console.log(`Altura convertida: ${alturaConvertida}`);
+
+      const imc = calculaImc(pesoConvertido, alturaConvertida);
+      console.log(`Seu IMC é: ${imc}`);
+      const resultadoImc = verificaImc(imc);
+      resultado.innerHTML += `${resultadoImc}`;
+    }
   }
   form.addEventListener("submit", recebeEventoForm);
 }
