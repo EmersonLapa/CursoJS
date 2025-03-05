@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Iniciar o Chrome em relação a localhost",
-            "url": "file:///C:/Users/emers/OneDrive/Udemy/CursoJS/aula26/Exercicio%20Aula%2026/index.html",
+            "url": "file:///C:/Users/emers/OneDrive/Udemy/CursoJS/aula26/Exercicio%20Aula%2026%20-%20Professor/modelo/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
